@@ -31,12 +31,7 @@ const ContactInfo = () => {
   const prefersReducedMotion = useReducedMotion();
 
   const contactItems = [
-    { 
-      icon: <FileText size={24} />, 
-      title: "GST NO", 
-      value: "24BGIPS7190F1Z1",
-      color: '#c5b173'
-    },
+   
     { 
       icon: <Phone size={24} />, 
       title: "Contact Number", 
