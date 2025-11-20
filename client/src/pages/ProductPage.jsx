@@ -167,9 +167,18 @@ const ProductsPage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
     async function setUp() {
-      const p = await allProduct();
-      setProducts(p);
-     
+      try {
+        const p = await allProduct();
+        if (p) {
+          setProducts(p);
+        } else {
+          console.warn('No products returned from API');
+          setProducts([]);
+        }
+      } catch (error) {
+        console.error('Error setting up products:', error);
+        setProducts([]);
+      }
     }
 useEffect(() => {
     if (!categories || categories.length === 0) {
